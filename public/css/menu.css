@@ -1,0 +1,130 @@
+/* Common styles for all screen sizes */
+.blog-sidebar-title,
+.blog-sidebar-list,
+.blog-sidebar-text,
+.list-icon,
+.product-sidebar-list,
+.card-title,
+.card-text,
+.price-tag,
+.button-text,
+.product-image {
+    font-family: 'Kanit', sans-serif;
+}
+
+.blog-sidebar-title,
+.blog-sidebar-list,
+.blog-sidebar-text {
+    color: #242424;
+}
+
+.list-icon {
+    color: #c0aa83;
+}
+
+.product-sidebar-list {
+    color: #e5e169;
+}
+
+.product-sidebar-list:hover {
+    color: #c0aa83;
+}
+/* Add this to your existing CSS */
+.description-limit {
+    max-height: 60px; /* Set the maximum height for the description */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Adjust the number of lines to display */
+    -webkit-box-orient: vertical;
+}
+
+
+.card-title {
+    color: #bf9d61;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.card-text {
+    font-size: 13px;
+}
+.add-to-cart-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.quantity-input {
+    width: 60px; /* Adjust the width as needed */
+    text-align: center;
+}
+.price-tag {
+    color: chocolate;
+    font-size: 18px; /* Adjust the font size */
+    font-weight: 900;
+}
+
+.button-text {
+    font-size: 14px;
+    font-weight: 900;
+}
+
+.product-image {
+    width: 200px; /* Adjust to fit container width */
+   height: 200px;
+    border-radius: 10px;
+}
+
+.card {
+    margin-top: 10px;
+    border-radius: 10px;
+    overflow: hidden; /* Ensure content does not overflow */
+}
+
+
+
+.product-image:hover {
+    transform: scale(1.025);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Responsive styles using media queries */
+
+@media only screen and (max-width: 992px) {
+    /* Adjust styles for screens up to 768px width */
+    .blog-form {
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+
+    .card {
+        display: block; /* Switch back to block layout for smaller screens */
+        margin-bottom: 20px; /* Add spacing between cards */
+    }
+
+    .product-image {
+        width: 100%; /* Make the image take the full width of its container */
+        height: auto; /* Maintain aspect ratio */
+        border-radius: 0; /* Remove border-radius for smaller screens */
+    }
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    /* Adjust the margin as needed */
+}
+
+.pagination .page-link {
+    color: grey;
+    /* Change to the desired color */
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #718694;
+    /* Change to the desired color */
+    border-color: #84949f;
+    /* Change to the desired color */
+}
