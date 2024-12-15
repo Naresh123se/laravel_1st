@@ -1,4 +1,4 @@
-# Silver Point Restaurant - Restaurant Management System
+#  Restaurant Management System
 
 
 ### Happy Coding! 💻🚀💻👨‍💻
