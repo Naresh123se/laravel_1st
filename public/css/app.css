@@ -1,6 +1,5 @@
 .custom-login {
-
-    padding-top: 100px
+    padding-top: 100px;
 }
 
 .center-btn {
@@ -12,11 +11,10 @@
 }
 
 footer {
-    background-color:#f8f9fa ;
+    background-color: #f8f9fa;
     text-align: center;
     padding: 10px;
 }
-
 
 body {
     margin: 0;
@@ -27,11 +25,9 @@ body {
 }
 
 .card {
-
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
-
 
 .error-card {
     padding-top: 5%;
@@ -48,12 +44,11 @@ body {
     padding: 20px;
 }
 
-
 /* Default styles */
 .btn-outline-success {
-    color: #fff!important;
+    color: #fff !important;
     background-color: green !important;
-    border-color:black!important;
+    border-color: black !important;
 }
 
 /* Hover styles */
@@ -63,27 +58,35 @@ body {
     border-color: green !important;
 }
 
-#carouselExampleIndicators {
-    margin-top: 10px;
-    max-width: 100%;
-    border-radius: 20px;
-}
+
 
 .carousel-inner img {
-    height: 300px; 
     object-fit: cover;
-    border-radius: 20px; 
+    /* border-radius: 20px;  */
 }
 
-
 .carousel-caption {
-    background: rgba(0, 0, 0, 0.5); 
-    border-radius: 15px; 
-    padding: 5px; 
+    background: rgba(27, 27, 27, 0.844);
+    border-radius: 15px;
+    padding: 5px;
+    width: max-content;
+    display: flex;
+    justify-self: center;
+    z-index: 100;
+   
 }
 
 .carousel-caption h5,
 .carousel-caption p {
-    color: white; 
+    color: rgb(235, 220, 220);
+
+
 }
 
+
+
+#img1{
+    height: calc(100vh - 80px);
+    background: rgba(27, 27, 27, 0.844);
+
+}
