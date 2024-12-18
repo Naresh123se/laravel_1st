@@ -62,7 +62,6 @@ body {
 
 .carousel-inner img {
     object-fit: cover;
-    /* border-radius: 20px;  */
 }
 
 .carousel-caption {
@@ -73,20 +72,20 @@ body {
     display: flex;
     justify-self: center;
     z-index: 100;
-   
 }
 
 .carousel-caption h5,
 .carousel-caption p {
     color: rgb(235, 220, 220);
-
-
 }
 
-
-
-#img1{
+#img1 {
     height: calc(100vh - 80px);
     background: rgba(27, 27, 27, 0.844);
 
+}
+
+.nm{
+    display: flex;
+    align-items: center;
 }

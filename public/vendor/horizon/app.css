@@ -9212,3 +9212,7 @@ button:hover .fill-primary {
 .badge-sm {
     font-size: 0.75rem;
 }
+.ss{
+    height: 80px;
+    background-color: #FF0000;
+}

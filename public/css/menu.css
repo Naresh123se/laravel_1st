@@ -125,20 +125,36 @@
     border-color: #84949f;
     /* Change to the desired color */
 }
-.nav1 {
-    background-color: #ecb054;
-    height: 80px;
-}
-
 .nbl {
     display: flex;
-    height: 100%;
     align-items: center;
+    justify-content: space-between;
 }
+
+
+
+.aa{
+    display: flex;
+    grid-row: auto;
+    align-items: center;
+    height: 100%;
+    list-style: none;
+}
+.nav11{
+  background-color:#ECB054 ;
+}
+
+
 .menunav {
     display: flex;
-    gap: 20px;
-    list-style: none;
+     align-items: center;
+}
+
+.con11{
+    display: flex;
+    align-items: center;
+    height: 80px;
+
 }
 .nav-link:hover {
     color: black;
@@ -149,6 +165,7 @@
 }
 
 .nav-item.active > .nav-link {
-    font-weight: bold;
+    border-bottom: 2px solid black; /* Adjust thickness and color */
 }
+
 

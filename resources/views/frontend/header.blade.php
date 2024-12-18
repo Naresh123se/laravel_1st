@@ -1,21 +1,26 @@
-<div class="nav1   ">
-    <div class="container con11 ">
+<div class="nav-section main-menu navbar-light bg-warning header  ">
+    <div class="d-flex ">
 
-        <nav class="navbar navbar-expand-lg nbl ">
-            <a class=" " href="/">
-                <img src="{{ asset('/images/logo.svg') }}" alt="Image" width="80" height="60" alt=""
+        <nav class="navbar navbar-expand-lg container ">
+            <a class="navbar-brand" href="/">
+                <img src="{{ asset('/images/logo.svg') }}" alt="Image" width="80" height="80" alt=""
                     class="mr-5">
             </a>
 
-            <div class="collapse navbar-collapse">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
                 <div class="ml-auto">
-                    <ul class=" menunav">
+                    <ul class="navbar-nav">
                         <li class="nav-item {{ Request::is('/') ? 'active' : '' }}">
-                            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="/" style="color: black;">Home <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item {{ Request::is('menu') ? 'active' : '' }}">
-                            <a class="nav-link" href="/menu">Menu</a>
+                            <a class="nav-link" href="/menu" style="color: black;">Menu</a>
                         </li>
                         <li class="nav-item {{ Request::is('about-us') ? 'active' : '' }}">
                             <a class="nav-link" href="/about-us" style="color: black;">About Us</a>
@@ -32,7 +37,8 @@
                                 {{ Auth::user()->name }}
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('admin.dashboard') }}" style="color: black;">Dashboard</a>
+                                <a class="dropdown-item {{ Request::is('admin/dashboard') ? 'active' : '' }}"
+                                    href="{{ route('admin.dashboard') }}" style="color: black;">Dashboard</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="{{ route('admin.logout') }}" style="color: black;">Logout</a>
                             </div>
@@ -44,9 +50,11 @@
                                 {{ Auth::user()->name }}
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ url('my-profile') }}" style="color: black;">My Profile</a>
+                                <a class="dropdown-item {{ Request::is('my-profile') ? 'active' : '' }}"
+                                    href="{{ url('my-profile') }}" style="color: black;">My Profile</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="{{ url('my-orders') }}" style="color: black;">My Orders</a>
+                                <a class="dropdown-item {{ Request::is('my-orders') ? 'active' : '' }}"
+                                    href="{{ url('my-orders') }}" style="color: black;">My Orders</a>
                                 <div class="dropdown-divider"></div>
                                 <form action="{{ route('logout') }}" method="POST">
                                     @csrf
@@ -60,24 +68,22 @@
                                 {{ Auth::user()->name }}
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ url('verify-email') }}" style="color: black;">Verify Email</a>
+                                <a class="dropdown-item {{ Request::is('verify-email') ? 'active' : '' }}"
+                                    href="{{ url('verify-email') }}" style="color: black;">Verify Email</a>
                             </div>
                             @endif
                             @endif
                             @else
-                            <a class="nav-link" style="color: black;" href="" id="navbarDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                                    class="bi bi-person-circle" viewBox="0 0 16 16">
-                                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
-                                    <path fill-rule="evenodd"
-                                        d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
-                                </svg>
+                            <a class="nav-link dropdown-toggle" style="color: black;" href="" id="navbarDropdown"
+                                role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Register
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('login') }}" style="color: black;">Login</a>
+                                <a class="dropdown-item {{ Request::is('login') ? 'active' : '' }}"
+                                    href="{{ route('login') }}" style="color: black;">Login</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="{{ route('register') }}" style="color: black;">SignUp</a>
+                                <a class="dropdown-item {{ Request::is('register') ? 'active' : '' }}"
+                                    href="{{ route('register') }}" style="color: black;">SignUp</a>
                             </div>
                             @endauth
                         </li>
@@ -88,7 +94,8 @@
                             @endphp
                             @if (Auth::user()->email_verified_at)
                             <div class="cart-container">
-                                <a class="cart" href="{{ url('/cart', Auth::user()->id) }}" style="text-decoration: none">
+                                <a class="cart {{ Request::is('cart') ? 'active' : '' }}"
+                                    href="{{ url('/cart', Auth::user()->id) }}" style="text-decoration: none">
                                     <img src="{{ asset('/images/cart.png') }}" alt="Cart Icon" width="20" height="20">
                                 </a>
                                 ({{ $cartCount }})

@@ -18,7 +18,7 @@
             </div>
             <div class="carousel-item">
                 <img class="d-block w-100" src="images/slider_images/bg2.jpg" alt="Second slide" id="img1">
-                <div class="carousel-caption d-none d-md-block">
+                <div class="carousel-caption1 d-none d-md-block">
                     <h5>Momo</h5>
                     <p>Delicious momos to satisfy your taste buds</p>
                 </div>

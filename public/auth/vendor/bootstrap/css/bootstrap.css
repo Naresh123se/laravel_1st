@@ -3316,7 +3316,7 @@ tbody.collapse.show {
   padding: 0.25rem 0.75rem;
   font-size: 1.25rem;
   line-height: 1;
-  background: transparent;
+  background-color:  #FF0000;
   border: 1px solid transparent;
   border-radius: 0.25rem;
 }
@@ -3333,6 +3333,7 @@ tbody.collapse.show {
   content: "";
   background: no-repeat center center;
   background-size: 100% 100%;
+  
 }
 
 @media (max-width: 575px) {
