@@ -1,6 +1,6 @@
 <div class="container11">
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="3000">
-        <ol class="carousel-indicators">
+        <ol class="carousel-indicators ok">
           <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
           <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
           <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
@@ -18,7 +18,7 @@
             </div>
             <div class="carousel-item">
                 <img class="d-block w-100" src="images/slider_images/bg2.jpg" alt="Second slide" id="img1">
-                <div class="carousel-caption1 d-none d-md-block">
+                <div class="carousel-caption d-none d-md-block">
                     <h5>Momo</h5>
                     <p>Delicious momos to satisfy your taste buds</p>
                 </div>
