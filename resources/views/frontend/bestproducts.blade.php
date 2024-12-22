@@ -1,5 +1,9 @@
-<div class="container">
-    <h3 class="category-heading">Seasonal Specials </h3>
+<div class="cl">
+    <div class="container pb-5">
+        <div class="dd">
+
+            <h3 class=" category-heading ">Seasonal Specials </h3>
+        </div>
     <div class="row">
         @foreach ($viewproducts as $index => $product)
             <div class="col-sm-3 col-md-4 col-lg-3">
@@ -16,8 +20,8 @@
                             <input type="hidden" name="product_id" value="{{ $product->id }}">
                             <div class="input-group">
                                 <input type="number" name="quantity" value="1" min="1" max="10" required class="form-control quantity-input">
-                                <div class="input-group-append">
-                                    <button type="submit" class="btn btn-success">Add to Cart</button>
+                                <div class="input-group-append" style="background-color: #FFC107">
+                                    <button type="submit" class="btn btn-">Add to Cart</button>
                                 </div>
                             </div>
                         </form>
@@ -57,5 +61,6 @@
                 </div>
             @endif
         @endforeach
+    </div>
     </div>
 </div>

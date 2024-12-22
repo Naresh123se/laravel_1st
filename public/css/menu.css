@@ -92,7 +92,8 @@
 @media only screen and (max-width: 992px) {
     /* Adjust styles for screens up to 768px width */
     .blog-form {
-        padding: 10px; /* Adjust padding for smaller screens */
+        padding: 10px;
+        background-color: #84949f; /* Adjust padding for smaller screens */
     }
 
     .card {
@@ -118,7 +119,10 @@
     color: grey;
     /* Change to the desired color */
 }
-
+.dd {
+    position: relative;
+    transform: translateY(-60%);
+}
 .pagination .page-item.active .page-link {
     background-color: #718694;
     /* Change to the desired color */
@@ -131,30 +135,34 @@
     justify-content: space-between;
 }
 
+.bt1 {
+    background-color: #ffc107;
+}
 
+.cl {
+    background-color: #e8edfb;
+}
 
-.aa{
+.aa {
     display: flex;
     grid-row: auto;
     align-items: center;
     height: 100%;
     list-style: none;
 }
-.nav11{
-  background-color:#ECB054 ;
+.nav11 {
+    background-color: #ecb054;
 }
-
 
 .menunav {
     display: flex;
-     align-items: center;
+    align-items: center;
 }
 
-.con11{
+.con11 {
     display: flex;
     align-items: center;
     height: 80px;
-
 }
 .nav-link:hover {
     color: black;
@@ -167,5 +175,3 @@
 .nav-item.active > .nav-link {
     border-bottom: 2px solid black; /* Adjust thickness and color */
 }
-
-
