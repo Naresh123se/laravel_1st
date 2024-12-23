@@ -52,11 +52,10 @@
 
             .category-heading {
                 text-align: center;
-                font-size: 3rem;
-                font-weight: bold;
-                text-shadow: 2px 2px 2px rgba(97, 92, 92, 0.605);
+                font-size: 2.3rem;
                 color: #FFC107;
             }
+     
             .category-heading1 {
                 color: #000;
             }

@@ -23,12 +23,15 @@
             <div class="col-lg-3 blog-form cl pt-2">
                 <h3 class="blog-sidebar-title"><b>Categories</b></h3>
                 <hr />
-                
+
                 @foreach ($categories as $category)
                 <p class="blog-sidebar-list">
                     <a href="{{ route('products.searchSort', ['category' => $category->id]) }}"
                         style="color: chocolate; text-decoration: none;">
-                        <b><span class="list-icon"> > </span> {{ $category->name }}</b>
+                        <b class="">
+                            <li> {{ $category->name }}</li>
+
+                        </b>
                     </a>
                 </p>
                 @endforeach
@@ -186,19 +189,6 @@
                         }
                     });
                 </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                 <div class="row">
 

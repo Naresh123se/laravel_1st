@@ -142,7 +142,12 @@
 .cl {
     background-color: #e8edfb;
 }
-
+.cat1{
+    color: #FFC107;
+}
+.bb{
+    font-weight: 700;
+}
 .aa {
     display: flex;
     grid-row: auto;
@@ -172,6 +177,23 @@
     color: rgba(0, 0, 0, 0.634);
 }
 
+
+
 .nav-item.active > .nav-link {
     border-bottom: 2px solid black; /* Adjust thickness and color */
+}
+
+.res-img{
+    width: 85%;
+    height: 95%;
+    object-fit: cover;
+}
+
+.text{
+    text-align: right;
+}
+.text1{
+    margin-left: 25%;
+    width: 68%;
+
 }
