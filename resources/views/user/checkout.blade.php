@@ -62,9 +62,6 @@
                                         @enderror
                                     </div>
 
-
-
-
                                 </div>
                             </div>
 
@@ -128,11 +125,11 @@
                                     <input type="radio" class="form-check-input" name="payment" id="cashOnDelivery" value="cash_on_delivery" onchange="enablePlaceOrderButton()"> Cash On Delivery
                                 </label>
                             </div>
-                            <div class="form-check">
+                            <!-- <div class="form-check">
                                 <label class="form-check-label">
                                     <input type="radio" class="form-check-input" name="payment" id="paypal" value="paypal" onchange="enablePlaceOrderButton()"> PayPal
                                 </label>
-                            </div>
+                            </div> -->
             
                             <button class="btn btn-secondary order-placed" id="placeOrderButton" disabled>Place Order</button>
                            
@@ -155,11 +152,11 @@
 <script>
     function enablePlaceOrderButton() {
         var cashOnDelivery = document.getElementById('cashOnDelivery').checked;
-        var paypal = document.getElementById('paypal').checked;
+        
         var placeOrderButton = document.getElementById('placeOrderButton');
 
         // Enable the button only if one of the radio buttons is selected
-        placeOrderButton.disabled = !(cashOnDelivery || paypal);
+        placeOrderButton.disabled = !(cashOnDelivery);
 
 
     }

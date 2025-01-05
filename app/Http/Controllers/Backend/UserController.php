@@ -47,7 +47,7 @@ class UserController extends Controller
             'address' => $request->address,
             'phone' => $request->phone,
             'password' => Hash::make($request->password),
-            'email_verified_at' => now()
+            // 'email_verified_at' => now()
         ]);
 
         $notification = [

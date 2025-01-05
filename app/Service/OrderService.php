@@ -29,6 +29,9 @@ class OrderService
         $order->totalPrice = $request->input('totalPrice');
         $order->tracking_no = '#ODR' . rand(1111, 9999);
         $order->payment = $request->input('payment');
+        $order->status = $request->input('status', 0); // Optional default
+        $order->message = $request->input('message', null); 
+
         $order->save();
 
         return $order;

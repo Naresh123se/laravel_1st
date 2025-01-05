@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
-use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -33,21 +32,21 @@ class RegisteredUserController extends Controller
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
-            'address'=>['string','max:255',],
-            'phone'=>['string','max:10','min:10','unique:'.User::class],
+            'address' => ['string', 'max:255'],
+            'phone' => ['string', 'max:10', 'min:10', 'unique:'.User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
-            
         ]);
 
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
-            'address'=>$request->address,
-            'phone'=>$request->phone,
+            'address' => $request->address,
+            'phone' => $request->phone,
             'password' => Hash::make($request->password),
         ]);
 
-        event(new Registered($user));
+        // Removed the Registered event to avoid sending emails
+        // event(new Registered($user));
 
         Auth::login($user);
 

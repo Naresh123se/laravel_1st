@@ -46,7 +46,8 @@
                         <th>Payment Mode:</th>
                         <td>
                             @if($order->payment== 'cash_on_delivery')
-                                        <span class="badge bg-danger">COD</span>
+                            <p>Cash on Delivery</p>
+
                                         @elseif($order->payment== 'paypal')
                                         <span class="badge bg-blue">PayPal</span>
                                         @endif

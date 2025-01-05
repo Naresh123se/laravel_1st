@@ -2,8 +2,8 @@
 
 @section('content')
 <div class="container py-5">
-    <div class="row">
-        <div class="col-md-12">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
             @if (session('alert-type') == 'success')
             <div class="alert alert-success" id="success-alert">
                 {{ session('message') }}
@@ -17,43 +17,38 @@
                     }
                 }, 2000); // 2000 milliseconds = 2 seconds
             </script>
-        @endif
-            <div class="card">
-                <div class="card-header bg-secondary text-white">
+            @endif
+
+            <div class="card shadow-sm rounded">
+                <div class="card-header bg-primary text-white text-center">
                     <h4>My Profile</h4>
                 </div>
                 <div class="card-body">
-                    <div class="row">
-                        <div class="col text-left">
-                            <div class="form-group">
-                                <label for="name" class="font-weight-bold">Name</label>
-                                <div class="border p-2 rounded">{{ Auth::user()->name }}</div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="email" class="font-weight-bold">Email</label>
-                                <div class="border p-2 rounded">{{ Auth::user()->email }}</div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="phone" class="font-weight-bold">Contact Number</label>
-                                <div class="border p-2 rounded">{{ Auth::user()->phone }}</div>
-                            </div>
-
-                            <div class="form-group" >
-                                <label for="address" class="font-weight-bold">Address</label>
-                                <div class="border p-2 rounded">{{ Auth::user()->address }}</div>
-                            </div>
-
+                    <div class="list-group">
+                        <div class="list-group-item d-flex justify-content-between align-items-center">
+                            <strong>Name</strong>
+                            <span>{{ Auth::user()->name }}</span>
                         </div>
 
+                        <div class="list-group-item d-flex justify-content-between align-items-center">
+                            <strong>Email</strong>
+                            <span>{{ Auth::user()->email }}</span>
+                        </div>
 
+                        <div class="list-group-item d-flex justify-content-between align-items-center">
+                            <strong>Contact Number</strong>
+                            <span>{{ Auth::user()->phone }}</span>
+                        </div>
+
+                        <div class="list-group-item d-flex justify-content-between align-items-center">
+                            <strong>Address</strong>
+                            <span>{{ Auth::user()->address }}</span>
+                        </div>
                     </div>
-                    <a href="{{ url('edit-profile/'.Auth::user()->id) }}" class="btn btn-secondary mr-3">Change Details?</a>
 
-                  
-                    
-
+                    <div class="text-center mt-4">
+                        <a href="{{ url('edit-profile/'.Auth::user()->id) }}" class="btn btn-warning btn-lg">Edit Profile</a>
+                    </div>
                 </div>
             </div>
         </div>

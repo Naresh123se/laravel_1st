@@ -35,7 +35,7 @@ class AuthenticatedSessionController extends Controller
         }
         elseif($request->user()->role ==='user')
         {
-            $url='/verify-email';
+            $url='/';
         }
 
         return redirect()->intended($url);

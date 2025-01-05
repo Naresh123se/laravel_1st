@@ -1,118 +1,96 @@
 @extends('admin.layouts.app')
 
-
 @section('content')
 
-
-
-<section class="content-header">					
-    <div class="container-fluid my-2">
-        <div class="row mb-2">
+<section class="content-header">
+    <div class="container-fluid my-3">
+        <div class="row mb-2 align-items-center">
             <div class="col-sm-6">
-                <h1>Categories</h1>
+                <h1 class="font-weight-bold text-dark">Categories</h1>
             </div>
             <div class="col-sm-6 text-right">
-                <a href={{route('admin.addcategory')}} class="btn btn-primary">New Category</a>
+                <a href="{{ route('admin.addcategory') }}" class="btn btn-primary btn-lg shadow">
+                    <i class="fas fa-plus mr-2"></i> New Category
+                </a>
             </div>
         </div>
-        
     </div>
-    <!-- /.container-fluid -->
 </section>
-<!-- Main content -->
-<section class="content">
-    <!-- Default box -->
-    <div class="container-fluid">
-        <div class="card">
-            <div class="card-header">
-                <div class="card-tools">
-                    <div class="input-group input-group" style="width: 250px;">
-                        <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
 
+<section class="content">
+    <div class="container-fluid">
+        <div class="card shadow-sm border-0">
+            <div class="card-header bg-white d-flex justify-content-between align-items-center">
+                <h5 class="card-title font-weight-bold text-secondary">Category List</h5>
+                <div class="card-tools">
+                    <div class="input-group rounded-pill shadow-sm" style="width: 300px;">
+                        <input type="text" name="table_search" class="form-control border-0" placeholder="Search categories...">
                         <div class="input-group-append">
-                          <button type="submit" class="btn btn-default">
-                            <i class="fas fa-search"></i>
-                          </button>
-                        </div>                    
-                      </div>
+                            <button type="submit" class="btn btn-outline-secondary rounded-pill">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="card-body table-responsive p-0">								
-                <table class="table table-hover text-nowrap">
-                    <thead>
+            <div class="card-body p-0">
+                <table class="table table-hover text-center table-striped table-bordered mb-0">
+                    <thead class="thead-light">
                         <tr>
                             <th width="60">S.N</th>
                             <th>Category Name</th>
                             <th>Category Image</th>
-                    
-                            <th width="100">Action</th>
+                            <th width="120">Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach($category as $key => $item)
                         <tr>
-                            <td>{{$key+1}}</td>
-                            <td>{{$item->name}}</td>
-                            <td>{{$item->category_icon}}</td>
+                            <td>{{ $key + 1 }}</td>
+                            <td>{{ $item->name }}</td>
                             <td>
-                                
                                 @if($item->category_icon)
-                                <img src="{{ asset('storage/' . $item->category_icon) }}" alt="Icon" class="category-icon rounded-circle border border-gray-500" style="max-width:60px; max-height:60px">
-
-                       <!-- <img src="{{ asset('storage/app/public/'. $item->category_icon) }}" alt="Icon" class="category-icon rounded-circle border border-grey" style="max-width:60px; max-height:60px"> -->
-                                <!-- <img src="{{ Storage::url('public/images/sandesh.jpg') }}" alt="Image Alt Text"> -->
-
+                                <img src="{{ asset('storage/' . $item->category_icon) }}" 
+                                     alt="Icon" 
+                                     class="img-thumbnail rounded-circle" 
+                                     style="width: 50px; height: 50px;">
                                 @else
-                                    No Icon
+                                <span class="text-muted">No Icon</span>
                                 @endif
                             </td>
                             <td>
-                                <a href="{{route('admin.editcategory',$item->id)}}">
-                                    <svg class="filament-link-icon w-4 h-4 mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                        <path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"></path>
-                                    </svg>
+                                <a href="{{ route('admin.editcategory', $item->id) }}" class="btn btn-sm btn-outline-primary mr-1" title="Edit">
+                                    <i class="fas fa-edit"></i>
                                 </a>
-                                <a href="{{ route('admin.deletecategory', $item->id) }}" id="delete" class="delete-link text-danger w-4 h-4 mr-1" >
-                                    <svg wire:loading.remove.delay="" wire:target="" class="filament-link-icon w-4 h-4 mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                        <path	ath fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd"></path>
-                                      </svg>
+                                <a href="{{ route('admin.deletecategory', $item->id) }}" id="delete" class="btn btn-sm btn-outline-danger" title="Delete">
+                                    <i class="fas fa-trash"></i>
                                 </a>
                             </td>
                         </tr>
                         @endforeach
                     </tbody>
-                    @if(session('alert-type') == 'success')
-                    <div class="alert alert-success" id="success-alert">
-                        {{ session('message') }}
-                    </div>
-                
-                    <script>
-                        setTimeout(function(){
-                            var successAlert = document.getElementById('success-alert');
-                            if (successAlert) {
-                                successAlert.style.display = 'none';
-                            }
-                        }, 2000); // 2000 milliseconds = 2 seconds
-                    </script>
-                @endif
                 </table>
-                <div class="card-footer clearfix">
-                    <div class="d-flex justify-content-end">
-                        <div class="pagination">
-                            {{ $category->links() }}
-                        </div>
-                    </div>
-                </div>					
-            </div> 
+                <div class="card-footer bg-white d-flex justify-content-end">
+                    {{ $category->links('pagination::bootstrap-4') }}
+                </div>
+            </div>
         </div>
     </div>
-    
 </section>
-    
 
+@if(session('alert-type') == 'success')
+<div class="alert alert-success alert-dismissible fade show shadow-sm mt-3" role="alert" id="success-alert">
+    <i class="fas fa-check-circle mr-2"></i> {{ session('message') }}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
 
-
-
+<script>
+    setTimeout(function(){
+        $('#success-alert').alert('close');
+    }, 3000);
+</script>
+@endif
 
 @endsection
-
