@@ -7,7 +7,7 @@
         <div class="col-md-10">
             @if(count($orders) > 0)
                 <div class="card shadow-lg">
-                    <div class="card-header bg-primary text-white text-left">
+                    <div class="card-header text-white text-left" style="background-color: #701B19;">
                         <h4 class="ml-4">My Orders</h4>
                     </div>
                     <div class="card-body table-responsive p-4">

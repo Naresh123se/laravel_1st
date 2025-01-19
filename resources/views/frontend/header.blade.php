@@ -3,7 +3,7 @@
         <nav class="navbar navbar-expand-lg container">
             <!-- Logo -->
             <a class="navbar-brand" href="/">
-                <img src="{{ asset('/images/logo.svg') }}" alt="Logo" width="80" height="80" class="mr-4">
+                <img src="{{ asset('/images/logo12.png') }}" alt="Logo" width="80" height="80" class="mr-4">
             </a>
             <!-- Navbar Toggler -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"

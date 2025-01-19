@@ -52,14 +52,13 @@ Route::middleware(['auth'])->group(function () {
     Route::get("/remove/{id}", [CartController::class, 'removeCart']);
     Route::get("/checkout", [CheckOutController::class, 'index'])->name('checkout');
     Route::post("/place-order", [CheckOutController::class, 'placeorder']);
-    Route::get('payment-cancel',[PayPalController::class,'cancel'])->name('payment.cancel');
-    Route::get('payment-success',[PayPalController::class,'success'])->name('payment.success');
+    Route::get('payment-cancel', [PayPalController::class, 'cancel'])->name('payment.cancel');
+    Route::get('payment-success', [PayPalController::class, 'success'])->name('payment.success');
     Route::get("my-orders", [FUserController::class, 'index']);
     Route::controller(HomePageController::class)->group(function () {
-    Route::get('/dashboard', 'viewCategoryHome');
-
+        Route::get('/dashboard', 'viewCategoryHome');
     });
-    
+
     Route::get("view-order/{id}", [FUserController::class, 'view']);
     Route::get('my-profile', [FUserController::class, 'viewprofile'])->name('my-profile');
     Route::get('edit-profile/{id}', [FUserController::class, 'editprofile']);
@@ -102,14 +101,8 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
         Route::patch('/admin/orders/{order}', 'updateStatus')->name('admin.updateStatus');
         Route::get('/order/{id}', 'show')->name('admin.viewOrder');
     });
-
-
 }); // End group  Admin Middleware
 
 
 //Route::
 require __DIR__ . '/auth.php';
-
-
-
-

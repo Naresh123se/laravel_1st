@@ -1,7 +1,7 @@
 <aside class="main-sidebar elevation-4" style="background: linear-gradient(145deg, #5D44F8, #6F53F9);">
     <!-- Brand Logo -->
     <a href="{{ route('admin.dashboard') }}" class="brand-link" style="text-align: center; padding: 15px 0;">
-        <img src="{{ asset('images/logo.svg') }}" alt="Logo" class="brand-image img-circle elevation-2" style="width: 40px;">
+        <img src="{{ asset('images/logo12.png') }}" alt="Logo" class="brand-image img-circle elevation-2" style="width: 40px;">
         <span class="brand-text font-weight-bold" style="color: #fff; font-size: 18px;">ADMIN</span>
     </a>
     <!-- Sidebar -->

@@ -96,7 +96,7 @@
         <div class="register-box">
             <div class="form-title">
                 <a href="/">
-                    <img src="{{asset('images/logowhite.svg')}}" alt="Restaurant Logo">
+                    <img src="{{asset('images/logo12.png')}}" alt="Restaurant Logo">
                 </a>
                 <h1>Register</h1>
             </div>

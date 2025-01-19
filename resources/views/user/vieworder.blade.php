@@ -17,10 +17,10 @@
                                 <div class="border rounded p-3">{{ $orders->fname }}</div>
                             </div>
 
-                            <div class="mb-3">
+                            <!-- <div class="mb-3">
                                 <label for="last_name" class="form-label">Last Name</label>
                                 <div class="border rounded p-3">{{ $orders->lname }}</div>
-                            </div>
+                            </div> -->
 
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email</label>
@@ -40,6 +40,8 @@
                             <div class="mb-3">
                                 <label for="payment" class="form-label">Payment Method</label>
                                 <div class="border rounded p-3">
+                                <p>Cash on Delivery</p>
+
                                     @if($orders->payment == 'cash_on_delivery')
                                         <p>Cash on Delivery</p>
                                     @elseif($orders->payment == 'paypal')

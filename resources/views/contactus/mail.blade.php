@@ -59,9 +59,7 @@
 </head>
 <body>
     <div class="container">
-        <div class="logo">
-            <img src="https://i.ibb.co/brXm8xW/logo.png" alt="logo" border="0">
-        </div>
+     
 
         <h1>New Message from a Customer</h1>
 

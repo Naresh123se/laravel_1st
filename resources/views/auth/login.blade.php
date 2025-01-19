@@ -67,7 +67,7 @@
 <body>
 	<div class="login-container">
 		<div class="login-logo">
-			<a href="/"><img src="{{asset('images/logowhite.svg')}}" alt="Restaurant Logo"></a>
+			<a href="/"><img src="{{asset('images/logo12.png')}}" alt="Restaurant Logo"></a>
 		</div>
 		<div class="login-title">Log In To Continue</div>
 		<p class="text-center text-muted">Welcome back! Please log in to your account.</p>
